@@ -468,6 +468,36 @@ ul#memberProfileLinks {
 .simply-scroll-clip {	position: relative;overflow: hidden;}
 .simply-scroll-list {overflow: hidden;margin: 0;padding: 0;list-style: none;	}
 
+#myJobsList .rss-item-title a:before, #myJobsList-1 .rss-item-title:after {
+    position: absolute;
+    display: block;
+    content: ' ';
+    width: 60px;
+    height: 2px;
+    bottom: -15px;
+    background: #fff;
+    left: 50%;
+    transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+}
+
+#myJobsList .rss-item-title a, #myJobsList-1 a .rss-item-title {
+    font-family: 'KlinicSlab-Medium', serif;
+    text-transform: inherit;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-top: 15%;
+    color: #fff;
+    position: relative; 
+    /* line-height: 1.2; */
+    margin-bottom: 30px;
+    /* display: block; */
+}
 
 
 /* Dynamic page styles */
