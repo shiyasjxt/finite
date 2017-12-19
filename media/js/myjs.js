@@ -246,7 +246,7 @@ var currentPage = window.location.pathname.toLowerCase();
                         limit: dataLmt
                     },
                     templates: {
-                    itemTemplate: "<span class='rss-item' id='rss-item-{{item-index}}'><span class='rss-item-title'><a target='_blank' href='{{link}}'>{{title}}</a></span><span class='rss-description'>{{description}}</span><span class='rssLocation'></span><span class='rssWorktype'></span>  <span class='rss-salary'>{{salaryLowerBand}} - ${{salaryUpperBand}}</span></span>"                    },
+                    itemTemplate: "<a target='_blank' href='{{link}}'><span class='rss-item' id='rss-item-{{item-index}}'><span class='rss-item-title'>{{title}}</span><span class='rss-description'>{{description}}</span><span class='rssLocation'></span><span class='rssWorktype'></span> <span class='rss-salary'>{{salaryLowerBand}}- ${{salaryUpperBand}}</span></span></a>"                    },
                     complete: function() {
                         // put location in a span of its own after pubdate.
                         $(this).children().each(function() {
@@ -321,8 +321,12 @@ var currentPage = window.location.pathname.toLowerCase();
          
 
         var baseUrl = "https://www.finite.com.au/blog/category/how-to/";
-        var baseSuffix = "?feed=json&callback=blog_posts";
+        var baseSuffix = "?feed=json&callback=blog_post1";
         var fullUrl = baseUrl + baseSuffix;
+
+        var baseUrl = "https://www.finite.com.au/blog/category/media/";
+        var baseSuffix = "?feed=json&callback=blog_post2";
+        var fullUrl1 = baseUrl + baseSuffix;
         
         $.getScript(fullUrl).done(function(){
             console.log('success');
@@ -345,6 +349,27 @@ var currentPage = window.location.pathname.toLowerCase();
             
            });
 
+
+           $.getScript(fullUrl1).done(function(){
+            console.log('success');
+            // $("#myNewsList ul").owlCarousel({
+   //                          autoplay: true, // Show next and prev buttons
+   //                          slideSpeed: 4000,
+   //                          paginationSpeed: 1500,
+   //                          items: 2,
+   //                          loop: true,
+   //                          dots: true,
+   //                          responsive: {
+   //                              0: {
+   //                                  items: 1
+   //                              },
+   //                              768: {
+   //                                  items: 2
+   //                              }
+   //                          }
+   //                      });
+            
+           });
         /*$("#testimonial > div").each(function() {
             var dataURL = $(this).attr("data-url");
             $(this).includeFeed({
@@ -1049,9 +1074,31 @@ window.onload = function() {
     }
 }*/
 
-function blog_posts(obj) {
+    
+function blog_post2(obj) {
+    
+            for (var index = 0; index < obj.length && index < 1; ++index) {
+                // add post span
+                console.log(obj[index].thumbnail.split(" "));
+                var thumbStr = obj[index].thumbnail;
+                if( thumbStr.length > 4 ){
+                    thumbStr = thumbStr.split(" ");
+                    if( thumbStr.length > 5 ){
+                        thumbStr = thumbStr[4]; 
+                    }
+                }else{
+                    thumbStr = '/media/future-you/images/placeholder-image.jpg'; //default image
+                }
+                $("#testimonial >div").append("<div class='testimonial-block col-xs-4' style='background-image:url("+ thumbStr +")'><div class='testimonial-content'><h4>" + obj[index].title + "</h4><span class='rss-link'><a target='_blank' href='" +  obj[index].permalink + "'>Find out more</a></span></div></div>");
+    
+                 // $("#testimonial >div").append("<div class='testimonial-block col-xs-4' style='background-image:url("+ thumbStr +")'><div class='testimonial-content'><h4>" + obj[index].title + "</h4><span class='rss-item-description'>"+obj[index].excerpt +"</span><span class='rss-link'><a target='_blank' href='" +  obj[index].permalink + "'>Find out more</a></span></div></div>");
+            }
+    
+        }
 
-        for (var index = 0; index < obj.length && index < 3; ++index) {
+function blog_post1(obj) {
+
+        for (var index = 0; index < obj.length && index < 2; ++index) {
             // add post span
             console.log(obj[index].thumbnail.split(" "));
             var thumbStr = obj[index].thumbnail;
@@ -1069,3 +1116,5 @@ function blog_posts(obj) {
         }
 
     }
+
+
