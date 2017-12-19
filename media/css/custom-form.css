@@ -1,0 +1,218 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400");
+
+#docContainer
+{
+	width: 100%;
+	max-width: 100% !important;
+	margin: 0 !important;
+	border: 0 !important;
+
+	color: #333 !important;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 15px !important;
+	line-height: 1.5 !important;
+}
+#fb-form-header1
+{
+	height: 0 !important;
+	min-height: 0 !important;
+}
+#docContainer .column
+{
+	padding: 0;
+}
+#docContainer .fb-item
+{
+	display: block !important;
+	overflow: hidden;
+	position: relative;
+
+	width: auto !important;
+	padding: 2px !important; /* make sure box shadow isn't cut off */
+	margin: 0 0 0.75em 0;
+}
+#docContainer .contact-form .fb-item{
+    margin-bottom: 25px;
+}
+#docContainer .fb-header h2
+{
+	display: block !important;
+	margin: 16px 0 5px 0;
+
+	font-size: 40px;
+	font-weight: 700;
+	font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+	text-shadow: none;
+	color: #f18d1e;
+}
+#docContainer .fb-grouplabel
+{
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+#docContainer .fb-grouplabel label
+{
+	/*fonts*/
+	font-size: 15px;
+	color: #333;
+	font-weight: 400 !important;
+    font-family: 'roboto', sans-serif;
+}
+#docContainer .contact-form .fb-grouplabel label
+{
+	/*fonts*/
+	font-size: 15px;
+	color: #fff;
+	font-weight: 400 !important;
+    font-family: 'roboto slab', sans-serif;
+    padding: 0 15px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+#docContainer .fb-checkbox label, 
+#docContainer .fb-radio label
+{
+	margin: 1em 0 0.5em;
+}
+#docContainer .fb-button, 
+#docContainer .fb-input-box, 
+#docContainer .fb-input-date, 
+#docContainer .fb-textarea, 
+#docContainer .fb-dropdown, 
+#docContainer .fb-listbox, 
+#docContainer .fb-checkbox, 
+#docContainer .fb-radio
+{
+	width: auto;
+	margin: 0;
+}
+#docContainer .fb-button input, 
+#docContainer .fb-input-box input, 
+#docContainer .fb-input-date input, 
+#docContainer .fb-textarea textarea, 
+#docContainer .fb-dropdown select, 
+#docContainer .fb-listbox select
+{
+	width: 100%;
+	height: 2.428;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	
+	border-radius: 4px;
+	font-size: 14px;
+	box-sizing: border-box;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+	background: #fff;
+	color: #555;
+}
+#docContainer .contact-form .fb-button input, #docContainer .contact-form .fb-input-box input, #docContainer .contact-form .fb-input-date input, #docContainer .contact-form .fb-textarea textarea, #docContainer .contact-form .fb-dropdown select, #docContainer .contact-form .fb-listbox select{
+        padding: 10px 12px;
+    border: 1px solid #003957;
+    border-radius: 20px;
+    background: #003957;
+    color: #fff;
+}
+#docContainer .fb-button input, 
+#docContainer .fb-dropdown select[multiple], 
+#docContainer .fb-listbox select,
+#docContainer .fb-textarea textarea
+{
+	height: auto;
+	background-image: none;
+}
+#docContainer .fb-textarea textarea
+{
+	min-height: 9em;
+}
+#docContainer .fb-input-box input:focus, 
+#docContainer .fb-textarea textarea:focus
+{
+	outline: 0;
+	box-shadow:none;
+}
+#docContainer input[type="radio"]
+{
+	margin: 0.1em 0;
+}
+#docContainer input[type="checkbox"]
+{
+	margin: 0.2em 0;
+}
+
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    opacity: 1;
+    color: #B3B3B3;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    opacity: 1;
+    color: #B3B3B3;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    opacity: 1;
+    color: #B3B3B3;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    opacity: 1;
+    color: #B3B3B3;
+}
+#fb-submit-button-div
+{
+	height: auto !important;
+	padding: 2px !important; /* match padding on group label */
+}
+#fb-submit-button
+{
+	padding: 5px 35px;
+	border: 2px solid #f5821f !important;
+	margin: 0 !important;
+
+	border-radius: 30px;
+	line-height: 1.42857;
+	font-size: 25px !important;
+	font-weight: 700;
+	font-family: "Roboto Slab", sans-serif !important;
+	text-shadow: none;
+	text-align: center;
+	cursor: pointer;
+	background: #f5821f;
+	color: #fff;
+
+	-webkit-appearance: none;
+	appearance: none;
+}
+.contact-form #fb-submit-button{width: 100%;}
+.contact-form #fb-submit-button:hover, .contact-form #fb-submit-button:focus{    background: #fff;
+    border-color: #fff;
+    color: #004062;}
+#fb-submit-button:hover, 
+#fb-submit-button:focus, 
+#fb-submit-button:active
+{
+	text-decoration: none;
+	background: #004062;
+	color: #fff;
+    border-color: #004062 !important;
+    
+}
+#docContainer label.error
+{
+	position: absolute;
+	top: 4px;
+	right: 5px;
+	z-index: 1;
+
+	width: auto !important;
+	padding: 0 !important;
+
+	color: #f18d1e;
+}
+.required
+{
+	color: #f18d1e;
+}
